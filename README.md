@@ -35,8 +35,15 @@ All response information is formatted by the model.
 ## Customisable Prompt
 ### Usage
 
+```console
+    What's the weather like in <location 1> <location 2> [<location>...] [% chance of rain, sun index] [language] [metric | imperial]
+```
 
-![prompt_usage.png](prompt_usage.png)
+Example prompt
+```console
+    What's the weather like in Sydney, Paris and Dublin, % chance of rain, in imperial units 
+```
+
 ## Prompt and Response
 
 
