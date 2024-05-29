@@ -239,7 +239,7 @@ if __name__ == '__main__':
     """Keep prompting the user to enter their input until they quit"""
     while True:
         content_example_1 = \
-            "What's the weather like in [x, y, z, ...] [% chance of rain, sun index] [language] [metric|imperial]"
+            "What's the weather like in <location 1> <location 2> [<location>...] [% chance of rain, sun index] [language] [metric | imperial]"
 
 
         content_quit = "Q, quit or exit"
