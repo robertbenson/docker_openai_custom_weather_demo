@@ -144,7 +144,7 @@ do not expose api keys.
 
 `docker rmi <docker_image_id> --force`
 
-## Useful Docker Commands
+## Useful Docker Commands (local)
 
 |                            |                                |        Comment |
 |----------------------------|:------------------------------:|---------------:|
@@ -159,6 +159,27 @@ do not expose api keys.
 
 
 `docker rm -v $(docker ps --filter status=exited -q)`
+
+## Summary of Docker Hub commands
+
+The build will be a concatenation of the user id and repository name.
+
+`userid/repository name`
+
+```console
+docker build --build-arg A_weather_api_key=<key> --build-arg A_openai_api_key=<key> -t rbenson789/demo_openai_weather .
+
+docker login
+
+docker push rbenson789/demo_openai_weather
+
+docker run -i  rbenson789/demo_openai_weather
+
+docker pull rbenson789/demo_openai_weather
+
+```
+
+
 
 
 
