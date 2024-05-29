@@ -13,9 +13,11 @@ load_dotenv('.env')
 
 
 def convert_wind_speed(wind_speed, unit):
+    """wind speed will be in meters per second. Convert to unit accordingly"""
     if unit.lower() == 'metric':
         return wind_speed * 3.6
     elif unit.lower() == 'imperial':
+        
         # 1 mile per day = 1.60934 km/h
         return wind_speed * 2.23694
     else:
@@ -114,18 +116,11 @@ class EventHandler(AssistantEventHandler):
                 json_object = json.loads(tool.function.arguments)
                 latitude = json_object["latitude"]
                 longitude = json_object["longitude"]
-                # language = json_object["language"]
 
-                # output = get_current_weather(52.588310, -8.548379)
                 output = get_rain_probability(latitude, longitude)
-                # print("output % : ", output)
-                # print("tool outputs % : ", tool_outputs)
                 tool_outputs.append(
                     {"tool_call_id": tool.id, "output": output})
             elif tool.function.name == "get_current_weather":
-                # latitude = tool.function.arguments.get("latitude"),
-                # longitude = tool.function.arguments.get("longitude"),
-
                 json_object = json.loads(tool.function.arguments)
                 latitude = json_object["latitude"]
                 longitude = json_object["longitude"]
@@ -140,16 +135,13 @@ class EventHandler(AssistantEventHandler):
                 except KeyError:
                     units = "metric"
 
-                # output = get_current_weather(52.588310, -8.548379)
-
                 output = get_current_weather(latitude, longitude, language,
                                              units)
-                # print("output probability: ", output)
                 tool_outputs.append(
                     {"tool_call_id": tool.id, "output": output})
                 # print("tool outputs: ", tool_outputs)
             else:
-                print("Here")
+                print("Error if here !!!!")
 
         # Submit all tool_outputs at the same time
         self.submit_tool_outputs(tool_outputs, run_id)
@@ -244,8 +236,9 @@ def setup(prompt: str):
 
 
 if __name__ == '__main__':
+    """Keep prompting the user to enter their input until they quit"""
     while True:
-        content_example_1 = \
+        usage = \
             "What's the weather like in [x, y, z, ...] [% chance of rain, sun index] [language] [metric|imperial]"
 
 
@@ -255,7 +248,7 @@ if __name__ == '__main__':
         print(80 * '*')
 
         print("\n")
-        print(content_example_1)
+        print(usage)
         print("\n")
         print(content_quit)
         print("\n")

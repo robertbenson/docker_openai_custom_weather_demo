@@ -5,10 +5,24 @@
 <img src="docker.png" alt="drawing" width="200"/>   <img src="openai.png" alt="drawing" width="225"/>
 
 Weather app using OpenAI function calling
+Python Code 
+[sample OpenAI function calling example](https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models)
+
+
+The supplied openai code has been modified to:
+
+1. modify the content for my use case
+2. make a dockerhub repository `rbenson789/demo_openai_weather`
+
+The repository on dockerhub can be pulled and run from a local machine.
 
 # Demo Weather app using Docker and OpenAI
 
 This is a Weather app using OpenAI function calling. 
+
+The user is invited to enter a natural language prompt, free format, with suggested guidelines.
+
+OpenAI will determine the model arguments for building JSON code for calls to a weather api and will call the relevant api's as appropriate for the prompt.
 
 ## Customisable Prompt
 
@@ -21,7 +35,7 @@ This is a Weather app using OpenAI function calling.
 ![response_from_prompt.png](response_from_prompt.png)
 
 
-## Docker Hub   (remote)
+## Docker Hub 
 
 ### pull from Docker Hub
 
@@ -31,6 +45,11 @@ This is a Weather app using OpenAI function calling.
 #### interactive: -i
 
 `docker run -i weather/demo_ai_app:1.0`
+
+
+# Background
+
+## Getting the app to dockerhub.
 
 
 ## Build Image (local)
