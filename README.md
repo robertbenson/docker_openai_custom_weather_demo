@@ -24,13 +24,20 @@ The user is invited to enter a natural language prompt, free format, with sugges
 
 OpenAI will determine the model arguments for building JSON code for calls to a weather api and will call the relevant api's as appropriate for the prompt.
 
+In the example code, 3 locations are used in the prompt, 3 api calls would therefore be expected to return data to the model.
+
 ## Customisable Prompt
+### Usage
 
 ![prompt.png](prompt.png)
 
 ## Prompt and Response
 
+All output in the response has been created by OpenAI.
+
 ### request weather in 3 cities
+
+
 
 ![response_from_prompt.png](response_from_prompt.png)
 
@@ -85,16 +92,13 @@ OpenAI will determine the model arguments for building JSON code for calls to a 
 
 ## Useful Docker Commands
 
-|  |                                |        Comment |
-|--|:------------------------------:|---------------:|
-|  |                                |                |
-| Build Image | docker build -t <image_name> . |                |
-| Run Image |   docker run -i <image_name>   | -i interactive |
-| List Images |       docker image list        |                |
-| Remove Image | docker image rm <image_id> -f  | -f means force |
-| Remove all dangling |       docker image prune       |                |
-|  |                                |                |
-|  
+|                            |                                |        Comment |
+|----------------------------|:------------------------------:|---------------:|
+| Build Image                | docker build -t <image_name> . |                |
+| Run Image                  |   docker run -i <image_name>   | -i interactive |
+| List Images                |       docker image list        |                |
+| Remove Image               | docker image rm <image_id> -f  | -f means force |
+| Remove all dangling images |       docker image prune       |                |
 
 
 ### remove container by status
