@@ -1,6 +1,6 @@
 
 
-<img src="openai2.png" alt="openai" width="90"/><img src="https://github.com/devicons/devicon/raw/master/icons/python/python-original.svg" alt="python" width="100"/><img src="https://github.com/devicons/devicon/raw/master/icons/docker/docker-original.svg" alt="docker" width="100"/>  
+<img src="openai2.png" alt="openai" width="85"/><img src="https://github.com/devicons/devicon/raw/master/icons/docker/docker-original.svg" alt="docker" width="100"/><img src="https://github.com/devicons/devicon/raw/master/icons/python/python-original.svg" alt="python" width="90"/> 
 
 
 # Demo Weather app using Docker and OpenAI
