@@ -1,15 +1,17 @@
 
 
 
+<img src="openai2.png" alt="openai" width="90"/> 
+<img src="https://github.com/devicons/devicon/raw/master/icons/python/python-original.svg" alt="python" width="100"/>
+<img src="https://github.com/devicons/devicon/raw/master/icons/docker/docker-original.svg" alt="docker" width="100"/>  
 
-<img src="docker.png" alt="docker png" width="200"/>   <img src="openai.png" alt="OpenAI" width="225"/>
 
 Weather app using OpenAI function calling
-Python Code 
-[sample OpenAI function calling example](https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models)
+Python  
+[Code sample ](https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models) OpenAI function calling example
 
 
-The supplied OpenAI code has been modified to:
+The example OpenAI code has been modified to:
 
 1. modify the content for my use case
 2. make a dockerhub repository `rbenson789/demo_openai_weather`
@@ -23,7 +25,7 @@ docker run -i rbenson789/demo_openai_weather
 
 # Demo Weather app using Docker and OpenAI
 
-This is a Weather app using OpenAI function calling. 
+This is a Weather app using OpenAI function calling. Weather data is supplied by openWeather api calls.
 
 The user is invited to enter a natural language prompt, free format, with suggested guidelines.
 
@@ -31,7 +33,9 @@ OpenAI will determine the model arguments for building JSON code for calls to a 
 
 In the example code, 3 locations are used in the prompt, 3 api calls would therefore be expected to return data to the model.
 
-Using the information in the user prompt, OpenAI will determine a considered response using context and inferences.
+Using the information in the user prompt, the model will determine a considered response using context and inferences. The number of api calls is decided by the model.
+
+All response information is formatted by the model.
 
 ## Customisable Prompt
 ### Usage
@@ -40,11 +44,17 @@ Using the information in the user prompt, OpenAI will determine a considered res
 
 ## Prompt and Response
 
-All output in the response has been created by OpenAI.
 
 ### request weather in 3 cities
 
+The model has detected that there are 3 locations in the prompt and has extracted model arguments for api calls.
 
+### longitude and latitude 
+The api requests to openWeather require longitude and latitude to return json formatted weather results for that area. 
+
+These have not been supplied by the user nor derived within the Python code. 
+
+The model has been asked to supply these as required arguments to build JSON for api calls.
 
 ![response_from_prompt.png](response_from_prompt.png)
 
