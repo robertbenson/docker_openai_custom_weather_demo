@@ -26,6 +26,8 @@ OpenAI will determine the model arguments for building JSON code for calls to a 
 
 In the example code, 3 locations are used in the prompt, 3 api calls would therefore be expected to return data to the model.
 
+Using the information in the user prompt, OpenAI will determine a considered response using context and inferences.
+
 ## Customisable Prompt
 ### Usage
 
