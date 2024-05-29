@@ -95,7 +95,11 @@ CMD ["python", "main.py"]
 
 do not expose api keys. 
 
+#### standard build 
+
 `docker build -t weather/demo_openai_weather:1.0 .`
+
+#### set up api keys in the build
 
 `docker build --build-arg A_weather_api_key=<your key> --build-arg A_openai_api_key=<your key> -t weather/demo_openai_weather:1.0 .`
 
