@@ -1,17 +1,16 @@
 
 
-
 <img src="openai2.png" alt="openai" width="90"/> 
 <img src="https://github.com/devicons/devicon/raw/master/icons/python/python-original.svg" alt="python" width="100"/>
 <img src="https://github.com/devicons/devicon/raw/master/icons/docker/docker-original.svg" alt="docker" width="100"/>  
 
 
-Weather app using OpenAI function calling
-Python  
-[Code sample ](https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models) OpenAI function calling example
+
+Customizable Weather app using OpenAI _function calling_
 
 
-The example OpenAI code has been modified to:
+
+The example OpenAI [Code](https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models) has been modified to:
 
 1. modify the content for my use case
 2. make a dockerhub repository `rbenson789/demo_openai_weather`
