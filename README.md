@@ -60,7 +60,7 @@ All output in the response has been created by OpenAI.
 
 # Background
 
-## Getting the app to dockerhub.
+## Getting the app to Docker Hub.
 
 <img src="dockerfile_container.png" alt="dockerfile to container png" width="600"/>
 
@@ -113,7 +113,7 @@ do not expose api keys.
 ## input from keyboard:   -i
 
 
-# Push to DockerHub
+# Push to Docker Hub
 
 `docker push rbenson789/demo_openai_weather`
 
