@@ -1,6 +1,11 @@
+### Python
+![Python](https://github.com/devicons/devicon/raw/master/icons/python/python-original.svg)
 
+### Docker
+![Docker](https://github.com/devicons/devicon/raw/master/icons/docker/docker-original.svg)
 
-
+### OpenAI
+![OpenAI](https://path-to-openai-icon/openai-icon.png)
 
 <img src="docker.png" alt="docker png" width="200"/>   <img src="openai.png" alt="OpenAI" width="225"/>
 
