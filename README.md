@@ -60,10 +60,63 @@ These have not been supplied by the user nor derived within the Python code.
 
 The model has been asked to supply these as required arguments to build JSON for api calls.
 
-![response_from_prompt.png](response_from_prompt.png)
+```console
+### Weather Summary
 
-### Request response in Japanese 
-![response_japanese.png](response_japanese.png)
+#### Sydney, Australia
+- **Weather**: Clear sky in the morning, with partly cloudy in the afternoon.
+- **Temperature**: 18.49°F
+  - Feels Like: 17.73°F (day), 16.43°F (night), 19.18°F (evening), 11.2°F (morning)
+- **Humidity**: 51%
+- **Wind**: 13.65 mph from the NNE (13°)
+- **Rain Probability**: 0%
+- **UV Index**: 3.25
+
+#### Paris, France
+- **Weather**: Partly cloudy with rain.
+- **Temperature**: 13.61°F
+  - Feels Like: 13.53°F (day), 15.73°F (night), 14.5°F (evening), 12.94°F (morning)
+- **Humidity**: 96%
+- **Wind**: 10.16 mph from the SW (219°)
+- **Rain Probability**: 100%
+- **UV Index**: 1.95
+
+#### Dublin, Ireland
+- **Weather**: Partly cloudy with rain.
+- **Temperature**: 16.06°F
+  - Feels Like: 15.65°F (day), 12.3°F (night), 14.03°F (evening), 11.26°F (morning)
+- **Humidity**: 74%
+- **Wind**: 13.33 mph from the WSW (259°)
+- **Rain Probability**: 100%
+- **UV Index**: 4.72
+
+Make sure to carry an umbrella in Paris and Dublin!
+```
+In Japanese 
+```console
+Enter prompt: what's the weather like in singapore, % chance of rain, 
+sun index in Japanese in imperial units
+```
+```console
+### シンガポールの天気
+- **説明**: 晴れ間もあるが、雨が予想される
+- **気温**: 30.15°F
+- **体感温度**:
+  - 日中: 35.16°F
+  - 夜: 33.15°F
+  - 夕方: 33.55°F
+  - 朝: 33.45°F
+- **湿度**: 69%
+- **風速**: 10.98マイル/時
+- **風向**: 199°
+
+### 雨の確率と紫外線指数
+- **雨の確率**: 100%
+- **紫外線指数 (UVI)**: 8.72
+
+全天候に備え、十分な対策をお取りください。
+```
+
 
 ## Docker Hub 
 
