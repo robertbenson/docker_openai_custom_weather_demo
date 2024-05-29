@@ -3,8 +3,8 @@
 <img src="openai2.png" alt="openai" width="90"/><img src="https://github.com/devicons/devicon/raw/master/icons/python/python-original.svg" alt="python" width="100"/><img src="https://github.com/devicons/devicon/raw/master/icons/docker/docker-original.svg" alt="docker" width="100"/>  
 
 
-
-Customizable Weather app using OpenAI _function calling_
+# Demo Weather app using Docker and OpenAI
+Customizable Weather app using OpenAI [function calling](https://platform.openai.com/docs/guides/function-calling)
 
 
 
@@ -20,9 +20,7 @@ docker pull rbenson789/demo_openai_weather
 docker run -i rbenson789/demo_openai_weather
 ```
 
-# Demo Weather app using Docker and OpenAI
-
-This is a Weather app using OpenAI function calling. Weather data is supplied by openWeather api calls.
+Weather data is supplied by openWeather api calls.
 
 The user is invited to enter a natural language prompt, free format, with suggested guidelines.
 
