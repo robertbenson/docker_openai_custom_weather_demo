@@ -16,6 +16,11 @@ The supplied OpenAI code has been modified to:
 
 The repository on dockerhub can be pulled and run from a local machine.
 
+```console
+docker pull rbenson789/demo_openai_weather
+docker run -i rbenson789/demo_openai_weather
+```
+
 # Demo Weather app using Docker and OpenAI
 
 This is a Weather app using OpenAI function calling. 
