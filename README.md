@@ -2,14 +2,14 @@
 
 
 
-<img src="docker.png" alt="drawing" width="200"/>   <img src="openai.png" alt="drawing" width="225"/>
+<img src="docker.png" alt="docker png" width="200"/>   <img src="openai.png" alt="OpenAI" width="225"/>
 
 Weather app using OpenAI function calling
 Python Code 
 [sample OpenAI function calling example](https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models)
 
 
-The supplied openai code has been modified to:
+The supplied OpenAI code has been modified to:
 
 1. modify the content for my use case
 2. make a dockerhub repository `rbenson789/demo_openai_weather`
@@ -62,8 +62,9 @@ All output in the response has been created by OpenAI.
 
 ## Getting the app to dockerhub.
 
+<img src="dockerfile_container.png" alt="dockerfile to container png" width="600"/>
 
-## Build Image (local)
+## Dockerfile
 
 ```Dockerfile 
 FROM python:3.12.1-slim
@@ -110,6 +111,13 @@ do not expose api keys.
 `docker run -i  rbenson789/demo_openai_weather`
 
 ## input from keyboard:   -i
+
+
+# Push to DockerHub
+
+`docker push rbenson789/demo_openai_weather`
+
+
 
 
 

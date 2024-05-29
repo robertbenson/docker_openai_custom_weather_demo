@@ -238,7 +238,7 @@ def setup(prompt: str):
 if __name__ == '__main__':
     """Keep prompting the user to enter their input until they quit"""
     while True:
-        usage = \
+        content_example_1 = \
             "What's the weather like in [x, y, z, ...] [% chance of rain, sun index] [language] [metric|imperial]"
 
 
@@ -248,7 +248,7 @@ if __name__ == '__main__':
         print(80 * '*')
 
         print("\n")
-        print(usage)
+        print(content_example_1)
         print("\n")
         print(content_quit)
         print("\n")
