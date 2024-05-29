@@ -13,7 +13,7 @@ The example OpenAI [Code](https://cookbook.openai.com/examples/how_to_call_funct
 1. modify the content for my use case
 2. make a dockerhub repository `rbenson789/demo_openai_weather`
 
-The repository on dockerhub can be pulled and run from a local machine.
+The repository on Docker Hub can be pulled and run from a local machine.
 
 ```console
 docker pull rbenson789/demo_openai_weather
@@ -35,8 +35,8 @@ All response information is formatted by the model.
 ## Customisable Prompt
 ### Usage
 
-![prompt.png](prompt.png)
 
+![prompt_usage.png](prompt_usage.png)
 ## Prompt and Response
 
 
