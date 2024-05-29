@@ -1,4 +1,3 @@
-# Use the official Python image from the Docker Hub
 FROM python:3.12.1-slim
 
 ARG A_weather_api_key
