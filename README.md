@@ -36,7 +36,9 @@ All response information is formatted by the model.
 ### Usage
 
 ```console
-    What's the weather like in <location 1> <location 2> [<location>...] [% chance of rain, sun index] [language] [metric | imperial]
+    What's the weather like in <location 1> <location 2> [<location>...] 
+    [% chance of rain, sun index] [language] 
+    [metric | imperial]
 ```
 
 Example prompt
