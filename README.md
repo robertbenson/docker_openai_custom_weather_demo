@@ -41,6 +41,8 @@ All output in the response has been created by OpenAI.
 
 ![response_from_prompt.png](response_from_prompt.png)
 
+### Request response in Japanese 
+![response_japanese.png](response_japanese.png)
 
 ## Docker Hub 
 
