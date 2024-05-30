@@ -171,8 +171,8 @@ In English, using Google Translate:
 Please be prepared for all weather conditions and take adequate precautions.
 ```
 
-
-## Docker Hub 
+## Docker  <img src="docker.svg" alt="openai model prompt api" width="40"/>
+### Docker Hub 
 
 ### pull from Docker Hub
 
@@ -184,14 +184,13 @@ Please be prepared for all weather conditions and take adequate precautions.
 `docker run -i rbenson789/demo_openai_weather`
 
 
-# Background
 
 
 ## Share image -  Docker Hub.
 
 <img src="dockerfile_container.png" alt="dockerfile to container png" width="600"/>
 
-## Dockerfile
+### Dockerfile
 
 ```Dockerfile 
 FROM python:3.12.1-slim
@@ -229,11 +228,10 @@ CMD ["python", "main.py"]
 
 
 
-## Run Image
+### Run Image
 
 `docker run -i  rbenson789/demo_openai_weather`
 
-## input from keyboard:   -i
 
 
 # Push image to Docker Hub
