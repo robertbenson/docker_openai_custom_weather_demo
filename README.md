@@ -183,7 +183,8 @@ Please be prepared for all weather conditions and take adequate precautions.
 
 # Background
 
-## Getting the app to Docker Hub.
+
+## Share image -  Docker Hub.
 
 <img src="dockerfile_container.png" alt="dockerfile to container png" width="600"/>
 
@@ -232,7 +233,7 @@ CMD ["python", "main.py"]
 ## input from keyboard:   -i
 
 
-# Push to Docker Hub
+# Push image to Docker Hub
 
 `docker push rbenson789/demo_openai_weather`
 
@@ -248,7 +249,7 @@ CMD ["python", "main.py"]
 
 ## Summary of Docker Hub commands
 
-The build will be a concatenation of the user id and repository name.
+The image name will be a concatenation of the user id and repository name.
 
 `userid/repository name`
 
