@@ -8,7 +8,7 @@ Customizable Weather app using OpenAI [function calling](https://platform.openai
 
 # Retrieval-Augmented Generation (RAG)
 
-RAG allows real-time data to be incorporated into model generated responses and other data that would not be available to the model at build time.
+RAG allows real-time data and other data, that would not ordinarily be available to the LLM, to be incorporated into model generated responses.
 
 
 The retrieved information, using predefined api's, is used to "augment" the model data to give more detailed responses.
@@ -80,6 +80,7 @@ Using the information in the user prompt, the model will make a response using c
 Using the example prompt,the model has detected that there are 3 locations in the prompt and has extracted model arguments for api calls.
 
 ### longitude and latitude ? 
+
 The api requests to openWeather require longitude and latitude to return json formatted weather results for that area. 
 
 These have not been supplied by the user nor derived within the Python code. 
