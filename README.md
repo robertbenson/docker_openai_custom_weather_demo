@@ -193,10 +193,6 @@ COPY . .
 CMD ["python", "main.py"]
 ```
 
-### passing hidden keys
-
-do not expose api keys. 
-
 #### standard build 
 
 `docker build -t weather/demo_openai_weather:1.0 .`
@@ -221,15 +217,7 @@ do not expose api keys.
 
 ## Useful Docker Commands (local)
 
-|                            |                                |        Comment |
-|----------------------------|:------------------------------:|---------------:|
-| Build Image                | docker build -t <image_name> . |                |
-| Run Image                  |   docker run -i <image_name>   | -i interactive |
-| List Images                |       docker image list        |                |
-| Remove Image               | docker image rm <image_id> -f  | -f means force |
-| Remove all dangling images |       docker image prune       |                |
-
-
+![docker_commands.png](docker_commands.png)
 ### remove container by status
 
 
