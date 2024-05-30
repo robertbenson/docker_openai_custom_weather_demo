@@ -6,7 +6,7 @@
 # Demo Weather app using Docker and OpenAI
 Customizable Weather app using OpenAI [function calling](https://platform.openai.com/docs/guides/function-calling)
 
-# Retrieval-Augmented Generation or RAG
+# Retrieval-Augmented Generation (RAG)
 
 RAG incorporates real-time data into model generated responses.
 
@@ -34,7 +34,7 @@ The user is invited to enter a natural language prompt, free format, with sugges
 OpenAI will determine the model arguments for building JSON for calls to a weather api. 
 The setting up, and processing the return data will be handled by the model. 
 The actual api call itself is a predefined api.
-In this case, openweather is used to augment model data. 
+In this case, openweather api calls are used to augment model data. 
 
 Any other weather agency could be used to fulfil the user requirements. 
 
