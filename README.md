@@ -55,9 +55,9 @@ In the example code, 3 locations are used in the prompt, 3 api calls are expecte
 
 Using the information in the user prompt, the model will make a response using context and inferences.
 
-<img src="model_api.png" alt="openai model api call" width="500"/>
+<img src="model_api_function_calling.png" alt="openai model prompt api" width="500"/>
 
-
+[//]: # (![model_api_function_calling.png]&#40;model_api_function_calling.png&#41;)
 
 
 ## Customisable Prompt
