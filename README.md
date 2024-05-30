@@ -21,14 +21,14 @@ is used.
 
 
 
-<img src="rag.png" alt="openai rag" width="500"/>
+<img src="retrieval_augmented_generation_rag.png" alt="openai rag" width="500"/>
 
 
 
 The example OpenAI [Code](https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models) has been modified to:
 
-1. modify the content for my use case
-2. make a dockerhub repository `rbenson789/demo_openai_weather`
+1. modify the content for my use case, add actual real-time weather (openweather) and add prompt
+2. make a Docker Hub repository `rbenson789/demo_openai_weather`
 
 The repository on Docker Hub can be pulled and run on a local machine.
 
