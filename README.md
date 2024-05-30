@@ -3,8 +3,10 @@
 <img src="openai2.png" alt="openai" width="85"/><img src="https://github.com/devicons/devicon/raw/master/icons/docker/docker-original.svg" alt="docker" width="100"/><img src="https://github.com/devicons/devicon/raw/master/icons/python/python-original.svg" alt="python" width="90"/> 
 
 
-# Demo Weather app using Docker and OpenAI
-Customizable Weather app using OpenAI [function calling](https://platform.openai.com/docs/guides/function-calling)
+# Demo Weather app using OpenAI - _Function Calling_
+## Python code and Docker Image
+
+This is a customizable Weather app using OpenAI [function calling](https://platform.openai.com/docs/guides/function-calling)
 
 # Retrieval-Augmented Generation (RAG)
 
@@ -147,7 +149,7 @@ response
 
 全天候に備え、十分な対策をお取りください。
 ```
-In English, using google translate:
+In English, using Google Translate:
 
 ```console
 ### Singapore Weather
