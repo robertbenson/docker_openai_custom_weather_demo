@@ -52,7 +52,7 @@ In the example code, 3 locations are used in the prompt, 3 api calls would are e
 
 Using the information in the user prompt, the model will make a response using context and inferences.
 
-
+<img src="model_api_call.png" alt="openai rag" width="500"/>
 
 
 
