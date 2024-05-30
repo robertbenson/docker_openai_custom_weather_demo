@@ -55,7 +55,7 @@ In this case, openweather api calls are used to augment model data.
 
 Any other weather agency could be used to fulfil the user requirements. 
 
-In the example code, 3 locations are used in the prompt, 3 api calls are expected to return data to the model.
+In the example code, 3 locations are used in the prompt, 3 api calls return data to the model.
 
 Using the information in the user prompt, the model will make a response using context and inferences.
 
@@ -125,7 +125,7 @@ The model has been asked to supply these as required arguments to build JSON for
 
 Make sure to carry an umbrella in Paris and Dublin!
 ```
-## Language
+### Language
 Prompt asking for output to be in Japanese 
 
 ```console
@@ -178,23 +178,14 @@ Please be prepared for all weather conditions and take adequate precautions.
 
 <img src="docker-logo-blue.svg" alt="dockerfile to container png" width="200"/>
 
-### Docker Hub 
-
-### pull from Docker Hub
-
-`docker pull rbenson789/demo_openai_weather`
-
-### run
-#### interactive: -i
-
-`docker run -i rbenson789/demo_openai_weather`
 
 
 
 
-## Share image -  Docker Hub.
 
-<img src="dockerfile_container.png" alt="dockerfile to container png" width="600"/>
+
+
+
 
 
 
@@ -234,17 +225,38 @@ CMD ["python", "main.py"]
 
 `docker build --build-arg A_weather_api_key=<your key> --build-arg A_openai_api_key=<your key> -t weather/demo_openai_weather:1.0 .`
 
+## Build image for Docker Hub
+The name of the image on Docker Hub will be userid/repository name
+`userid/repository name`
 
+e.g. 
+`docker build --build-arg A_weather_api_key=<key> --build-arg A_openai_api_key=<key> -t rbenson789/demo_openai_weather .`
 
 ### Run Image
 
+
+
 `docker run -i  rbenson789/demo_openai_weather`
 
+<img src="docker_hub.png" alt="dockerfile to container png" width="600"/>
 
 
-# Push image to Docker Hub
+
+
+
+## Push Image to Docker Hub
 
 `docker push rbenson789/demo_openai_weather`
+
+
+## Pull Image from Docker Hub
+
+`docker pull rbenson789/demo_openai_weather`
+
+### run
+#### interactive: -i
+
+`docker run -i rbenson789/demo_openai_weather`
 
 
 ## Useful Docker Commands (local)
