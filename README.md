@@ -1,6 +1,7 @@
 
 
-<img src="openai2.png" alt="openai" width="85"/><img src="https://github.com/devicons/devicon/raw/master/icons/docker/docker-original.svg" alt="docker" width="100"/><img src="https://github.com/devicons/devicon/raw/master/icons/python/python-original.svg" alt="python" width="90"/> 
+[//]: # (<img src="openai2.png" alt="openai" width="85"/><img src="https://github.com/devicons/devicon/raw/master/icons/docker/docker-original.svg" alt="docker" width="100"/><img src="https://github.com/devicons/devicon/raw/master/icons/python/python-original.svg" alt="python" width="90"/> )
+<img src="openai2.png" alt="openai" width="85"/> <img src="docker-mark-blue.svg" alt="docker" width="100"/><img src="https://github.com/devicons/devicon/raw/master/icons/python/python-original.svg" alt="python" width="90"/> 
 
 
 # Demo Weather app using OpenAI - _Function Calling_
@@ -11,6 +12,9 @@ This is a customizable Weather app using OpenAI [function calling](https://platf
 # Retrieval-Augmented Generation (RAG)
 
 RAG allows real-time data and other data, that would not ordinarily be available to the LLM, to be incorporated into model generated responses.
+There may be valid reasons to keep information out of the public domain and to only use it in controlled situations. Information may be new, and may have missed the last LLM build. For example, a car manufacturer has released a new car since the last build and wants to make that information available.
+
+
 
 
 The retrieved information, using predefined api's, is used to "augment" the model data to give more detailed responses.
@@ -171,7 +175,9 @@ In English, using Google Translate:
 Please be prepared for all weather conditions and take adequate precautions.
 ```
 
-## Docker  <img src="docker.svg" alt="openai model prompt api" width="40"/>
+
+<img src="docker-logo-blue.svg" alt="dockerfile to container png" width="200"/>
+
 ### Docker Hub 
 
 ### pull from Docker Hub
@@ -189,6 +195,8 @@ Please be prepared for all weather conditions and take adequate precautions.
 ## Share image -  Docker Hub.
 
 <img src="dockerfile_container.png" alt="dockerfile to container png" width="600"/>
+
+
 
 ### Dockerfile
 
@@ -266,6 +274,8 @@ docker run -i  rbenson789/demo_openai_weather
 docker pull rbenson789/demo_openai_weather
 
 ```
+
+ 
 
 
 
