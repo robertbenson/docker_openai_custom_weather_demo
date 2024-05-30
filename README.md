@@ -209,22 +209,6 @@ do not expose api keys.
 `docker push rbenson789/demo_openai_weather`
 
 
-
-
-
-
-
-## otherwise
-`docker run weather/demo_ai_app:1.0`
-
-## Images
-
-`docker images`
-
-## Remove Image
-
-`docker rmi <docker_image_id> --force`
-
 ## Useful Docker Commands (local)
 
 |                            |                                |        Comment |
