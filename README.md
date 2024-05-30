@@ -48,7 +48,7 @@ In this case, openweather api calls are used to augment model data.
 
 Any other weather agency could be used to fulfil the user requirements. 
 
-In the example code, 3 locations are used in the prompt, 3 api calls would are expected to return data to the model.
+In the example code, 3 locations are used in the prompt, 3 api calls are expected to return data to the model.
 
 Using the information in the user prompt, the model will make a response using context and inferences.
 
