@@ -59,7 +59,7 @@ def get_current_weather(latitude, longitude, lang, units):
         "latitude": latitude,
         "longitude": longitude,
     }
-
+    # print(result)
     return json.dumps(result)
 
 
@@ -87,6 +87,7 @@ def get_rain_probability(latitude, longitude):
         "uvi": weather_daily_uvi,
         "summary": weather_daily_summary,
     }
+
 
     return json.dumps(result)
 

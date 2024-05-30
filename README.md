@@ -6,6 +6,13 @@
 # Demo Weather app using Docker and OpenAI
 Customizable Weather app using OpenAI [function calling](https://platform.openai.com/docs/guides/function-calling)
 
+# Retrieval-Augmented Generation or RAG
+
+RAG incorporates real-time data into response.
+
+The retrieved information is used to "augment" the model data to give more detailed responses.
+RAG allows the model to consider data that was not originally known to the LLM. In this case, real-time weather information
+is used. 
 
 
 The example OpenAI [Code](https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models) has been modified to:
@@ -24,13 +31,21 @@ Weather data is supplied by openWeather api calls.
 
 The user is invited to enter a natural language prompt, free format, with suggested guidelines.
 
-OpenAI will determine the model arguments for building JSON code for calls to a weather api and will call the relevant api's as appropriate for the prompt.
+OpenAI will determine the model arguments for building JSON for calls to a weather api. 
+The setting up, and processing the return data will be handled by the model. 
+The actual api call itself is a predefined api.
+In this case, openweather is used to augment model data. 
 
-In the example code, 3 locations are used in the prompt, 3 api calls would therefore be expected to return data to the model.
+Any other weather agency could be used to fulfil the user requirements. 
 
-Using the information in the user prompt, the model will determine a considered response using context and inferences. The number of api calls is decided by the model.
+In the example code, 3 locations are used in the prompt, 3 api calls would are expected to return data to the model.
 
-All response information is formatted by the model.
+Using the information in the user prompt, the model will make a response using context and inferences.
+
+
+
+
+
 
 ## Customisable Prompt
 ### Usage
@@ -41,7 +56,7 @@ All response information is formatted by the model.
     [metric | imperial]
 ```
 
-Example prompt
+### Example prompt
 ```console
     What's the weather like in Sydney, Paris and Dublin, % chance of rain, in imperial units 
 ```
@@ -51,9 +66,9 @@ Example prompt
 
 ### request weather in 3 cities
 
-The model has detected that there are 3 locations in the prompt and has extracted model arguments for api calls.
+Using the example prompt,the model has detected that there are 3 locations in the prompt and has extracted model arguments for api calls.
 
-### longitude and latitude 
+### longitude and latitude ? 
 The api requests to openWeather require longitude and latitude to return json formatted weather results for that area. 
 
 These have not been supplied by the user nor derived within the Python code. 
@@ -92,11 +107,15 @@ The model has been asked to supply these as required arguments to build JSON for
 
 Make sure to carry an umbrella in Paris and Dublin!
 ```
-In Japanese 
+## Language
+Prompt ran asking for output to be in Japanese 
+
 ```console
 Enter prompt: what's the weather like in singapore, % chance of rain, 
 sun index in Japanese in imperial units
 ```
+response
+
 ```console
 ### シンガポールの天気
 - **説明**: 晴れ間もあるが、雨が予想される
