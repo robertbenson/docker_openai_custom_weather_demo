@@ -118,7 +118,7 @@ The model has been asked to supply these as required arguments to build JSON for
 Make sure to carry an umbrella in Paris and Dublin!
 ```
 ## Language
-Prompt ran asking for output to be in Japanese 
+Prompt asking for output to be in Japanese 
 
 ```console
 Enter prompt: what's the weather like in singapore, % chance of rain, 
