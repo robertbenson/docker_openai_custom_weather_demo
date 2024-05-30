@@ -217,7 +217,8 @@ CMD ["python", "main.py"]
 
 ## Useful Docker Commands (local)
 
-![docker_commands.png](docker_commands.png)
+<img src="docker_commands.png" alt="dockerfile to container png" width="400"/>
+
 ### remove container by status
 
 
