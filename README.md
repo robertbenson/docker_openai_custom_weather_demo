@@ -177,7 +177,7 @@ Please be prepared for all weather conditions and take adequate precautions.
 ### run
 #### interactive: -i
 
-`docker run -i weather/demo_ai_app:1.0`
+`docker run -i rbenson789/demo_openai_weather`
 
 
 # Background
