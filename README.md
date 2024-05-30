@@ -11,8 +11,18 @@ Customizable Weather app using OpenAI [function calling](https://platform.openai
 RAG incorporates real-time data into model generated responses.
 
 The retrieved information, using predefined api's, is used to "augment" the model data to give more detailed responses.
-RAG allows the model to consider data that was not originally known to the LLM. In this case, real-time weather information
+
+
+RAG allows the model to consider data that was not originally known to the LLM. 
+
+In this case, real-time weather information
 is used. 
+
+
+
+
+<img src="rag.png" alt="openai rag" width="500"/>
+
 
 
 The example OpenAI [Code](https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models) has been modified to:
