@@ -145,6 +145,27 @@ response
 
 全天候に備え、十分な対策をお取りください。
 ```
+In English, using google translate:
+
+```console
+### Singapore Weather
+- **Description**: Sunny with rain expected
+- **Temperature**: 30.15°F
+- **Feels like**:
+- Day: 35.16°F
+- Night: 33.15°F
+- Evening: 33.55°F
+- Morning: 33.45°F
+- **Humidity**: 69%
+- **Wind Speed**: 10.98 miles per hour
+- **Wind Direction**: 199°
+
+### Chance of Rain and UV Index
+- **Chance of Rain**: 100%
+- **Ultraviolet Ray Index (UVI)**: 8.72
+
+Please be prepared for all weather conditions and take adequate precautions.
+```
 
 
 ## Docker Hub 
