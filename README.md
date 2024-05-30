@@ -8,7 +8,8 @@ Customizable Weather app using OpenAI [function calling](https://platform.openai
 
 # Retrieval-Augmented Generation (RAG)
 
-RAG incorporates real-time data into model generated responses.
+RAG allows real-time data to be incorporated into model generated responses and other data that would not be available to the model at build time.
+
 
 The retrieved information, using predefined api's, is used to "augment" the model data to give more detailed responses.
 

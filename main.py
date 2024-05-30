@@ -238,6 +238,7 @@ def setup(prompt: str):
 
 if __name__ == '__main__':
     """Keep prompting the user to enter their input until they quit"""
+
     while True:
         content_example_1 = \
             "What's the weather like in <location 1> <location 2> [<location>...] [% chance of rain, sun index] [language] [metric | imperial]"
@@ -256,4 +257,6 @@ if __name__ == '__main__':
         prompt = input("Enter prompt: ")
         setup(prompt)
         if prompt == "Q" or prompt == "quit" or prompt == "exit" or prompt == "q":
-            break  # stops the loop
+            print("\n")
+            print("Bye")
+            break
