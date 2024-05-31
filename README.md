@@ -12,7 +12,10 @@ This is a customizable Weather app using OpenAI [function calling](https://platf
 # Retrieval-Augmented Generation (RAG)
 
 RAG allows real-time data and other data, that would not ordinarily be available to the LLM, to be incorporated into model generated responses.
-There may be valid reasons to keep information out of the public domain and to only use it in controlled situations. Information may be new, and may have missed the last LLM build. For example, a car manufacturer has released a new car since the last build and wants to make that information available.
+
+There may be valid reasons to keep information out of the public domain and to only use it in controlled situations. 
+
+Information may be new, and may have missed the last LLM build. For example, a car manufacturer has released a new car since the last build and wants to make that information available.
 
 
 
@@ -22,8 +25,7 @@ The retrieved information, using predefined api's, is used to "augment" the mode
 
 RAG allows the model to consider data that was not originally known to the LLM. 
 
-In this case, real-time weather information
-is used. 
+
 
 
 
@@ -55,7 +57,7 @@ In this case, openweather api calls are used to augment model data.
 
 Any other weather agency could be used to fulfil the user requirements. 
 
-In the example code, 3 locations are used in the prompt, 3 api calls return data to the model.
+In the example code, 3 locations are used in the prompt, detected by the model, 3 api calls return data to the model.
 
 Using the information in the user prompt, the model will make a response using context and inferences.
 
@@ -73,6 +75,85 @@ Using the information in the user prompt, the model will make a response using c
     [metric | imperial]
 ```
 
+
+
+## OpenAI Tools/Functions
+
+**Function calling** uses functions that the model calls to retrieve relevant data. The functions and respective arguments are defined.
+The model determines the function to call by the information available to it, using input, context and inference. 
+
+If the prompt is asking for weather, it will call the _get_current_weather_ function.
+If the prompt is looking for probability of rain, it will call the _get_rain_probability_ function.
+
+### longitude and latitude ? 
+
+The api requests to openWeather require longitude and latitude to return JSON formatted weather results for that area. 
+
+These have not been supplied by the user nor derived within the Python code. 
+
+The model has been asked to supply these as required arguments to build JSON for api calls. By using context and inference, the model can determine these.
+
+## Prompt
+Creating a good prompt is important. A good prompt can significantly enhance the quality of the model's output.
+
+Be specific and avoid unecessary information that main distract from the main task.
+
+
+```python
+tools=[
+            {
+                "type": "function",
+                "function": {
+                    "name": "get_current_weather",
+                    "description": "Get the current weather in a given latitude and longitude",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "latitude": {
+                                "type": "string",
+                                "description": "The latitude of a place",
+                            },
+                            "longitude": {
+                                "type": "string",
+                                "description": "The longitude of a place",
+                            },
+                            "language": {
+                                "type": "string",
+                                "description": "The language to respond with eg en for English, nl (Dutch), fr (French), sp (Spanish), ru (Russian), uk (Ukrainian)",
+                            },
+                            "unit": {"type": "string",
+                                     "description": "measurements in either imperial or metric",
+                                     "enum": ["imperial", "metric"]},
+
+                        },
+                        "required": ["latitude", "longitude"],
+                    },
+                },
+            },
+            {
+                "type": "function",
+                "function": {
+                    "name": "get_rain_probability",
+                    "description": "Get the probability of rain in a given latitude and longitude",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "latitude": {
+                                "type": "string",
+                                "description": "The latitude of a place",
+                            },
+                            "longitude": {
+                                "type": "string",
+                                "description": "The longitude of a place",
+                            },
+                        },
+                        "required": ["latitude", "longitude"],
+                    }
+                }
+            },
+
+        ]
+```
 ### Example prompt
 ```console
     What's the weather like in Sydney, Paris and Dublin, % chance of rain, in imperial units 
@@ -85,14 +166,8 @@ Using the information in the user prompt, the model will make a response using c
 
 Using the example prompt,the model has detected that there are 3 locations in the prompt and has extracted model arguments for api calls.
 
-### longitude and latitude ? 
 
-The api requests to openWeather require longitude and latitude to return json formatted weather results for that area. 
-
-These have not been supplied by the user nor derived within the Python code. 
-
-The model has been asked to supply these as required arguments to build JSON for api calls.
-
+### Response
 ```console
 ### Weather Summary
 
@@ -189,7 +264,7 @@ Please be prepared for all weather conditions and take adequate precautions.
 
 
 
-### Dockerfile
+## Dockerfile
 
 ```Dockerfile 
 FROM python:3.12.1-slim
@@ -217,7 +292,7 @@ COPY . .
 CMD ["python", "main.py"]
 ```
 
-#### standard build 
+### standard build 
 
 `docker build -t weather/demo_openai_weather:1.0 .`
 
@@ -232,7 +307,7 @@ The name of the image on Docker Hub will be userid/repository name
 e.g. 
 `docker build --build-arg A_weather_api_key=<key> --build-arg A_openai_api_key=<key> -t rbenson789/demo_openai_weather .`
 
-### Run Image
+## Run Image
 
 
 
@@ -241,7 +316,10 @@ e.g.
 <img src="docker_hub.png" alt="dockerfile to container png" width="600"/>
 
 
+## login on local device
 
+`Docker login`
+enter user id and password
 
 
 ## Push Image to Docker Hub
