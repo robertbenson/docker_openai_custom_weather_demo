@@ -79,7 +79,7 @@ Using the information in the user prompt, the model will make a response using c
 
 ## OpenAI Tools/Functions
 
-**Function calling** uses functions that the model calls to retrieve relevant data. The functions and respective arguments are defined.
+**Function calling** uses defined functions that the model calls to retrieve relevant data. The functions and respective arguments are defined.
 The model determines the function to call by the information available to it, using input, context and inference. 
 
 If the prompt is asking for weather, it will call the _get_current_weather_ function.
@@ -91,13 +91,15 @@ The api requests to openWeather require longitude and latitude to return JSON fo
 
 These have not been supplied by the user nor derived within the Python code. 
 
-The model has been asked to supply these as required arguments to build JSON for api calls. By using context and inference, the model can determine these.
+The model has been asked to supply these as required arguments to build JSON for api calls. 
+By using input locations, context and inference, the model can determine these.
 
 ## Prompt
 Creating a good prompt is important. A good prompt can significantly enhance the quality of the model's output.
 
-Be specific and avoid unecessary information that main distract from the main task.
+Be specific and avoid unnecessary information that may distract from the main task.
 
+This example would expect to _see_ locations, language, percentage, units in the prompt. A vague and unspecific prompt may give vague results. 
 
 ```python
 tools=[
