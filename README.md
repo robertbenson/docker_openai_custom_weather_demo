@@ -81,18 +81,18 @@ Using the information in the user prompt, the model will make a response using c
 
 ### Guidelines for writing a good prompt
 
-| #                    | Comment                                                                                                                                        | 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| #                    | Comment                                                                                                                                             | 
+|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
 | Persona              | Give the model an idea of the  _type of person_ that you would like a response from.<br/>e.g.You are a weather bot, <br/>you are a maths expert etc |
-| Be Clear and concise | no unnecessary commentary to distract                                                                                                          |
-| Context              | e.g. _explain the theory of relativity_                                                                                                        |
-| Scope                | define boundaries, in 200 words ..                                                                                                             |
-| Specific             | avoid tell me, use What ...                                                                                                                    |
-| Simple               | avoid jargon, technical phrases                                                                                                                |
-| Examples             | en for English, nl (Dutch), fr (French)                                                                                                        |
-| Break Down           | First, explain ... , then ....                                                                                                                 |
-| Format               | e.g. Report in table format                                                                                                                    |
-| Grammar and spelling | be accurate                                                                                                                                    |
+| Be Clear and concise | no unnecessary commentary to distract                                                                                                               |
+| Context              | e.g. _explain the theory of relativity_                                                                                                             |
+| Scope                | define boundaries, in 200 words ..                                                                                                                  |
+| Specific             | avoid tell me, use What ...                                                                                                                         |
+| Simple               | avoid jargon, technical phrases                                                                                                                     |
+| Examples             | en for English, nl (Dutch), fr (French)                                                                                                             |
+| Break Down           | First, explain ... , then ....                                                                                                                      |
+| Format               | e.g. Report in table format                                                                                                                         |
+| Grammar and spelling | be accurate                                                                                                                                         |
 
 
 ### Usage for this script
@@ -243,15 +243,15 @@ Using the example prompt,the model has detected that there are 3 locations in th
 
 
 
-| Metric         | Sydney 🌧️                  | Paris 🌧️                   | Dublin 🌧️                |
-|----------------|----------------------------|----------------------------|--------------------------|
-| **Temperature**| 59°F                        | 66.9°F                      | 57.7°F                   |
-| **Description**| Partly cloudy in morning, rain in the afternoon  | Partly cloudy with rain   | Partly cloudy with rain  |
-| **Wind Speed** | 15.3 mph                    | 9.9 mph                     | 15 mph                   |
-| **Wind Direction** | 188°                   | 284°                        | 282°                     |
-| **Humidity**   | 68%                         | 60%                         | 55%                      |
-| **UVI**        | 2.85                        | 3.63                        | 4.41                     |
-| **Rain Probability** | 100%                  | 27%                         | 20%                      |
+| Metric               | Sydney 🌧️                                      | Paris 🌧️               | Dublin 🌧️              |
+|----------------------|-------------------------------------------------|-------------------------|-------------------------|
+| **Temperature**      | 59°F                                            | 66.9°F                  | 57.7°F                  |
+| **Description**      | Partly cloudy in morning, rain in the afternoon | Partly cloudy with rain | Partly cloudy with rain |
+| **Wind Speed**       | 15.3 mph                                        | 9.9 mph                 | 15 mph                  |
+| **Wind Direction**   | 188°                                            | 284°                    | 282°                    |
+| **Humidity**         | 68%                                             | 60%                     | 55%                     |
+| **UVI**              | 2.85                                            | 3.63                    | 4.41                    |
+| **Rain Probability** | 100%                                            | 27%                     | 20%                     |
 
 ### UV Index Precautions:
 - **Sydney (UVI 2.85)**: Low risk. It's safe to be outside. Wear sunglasses on bright days.
@@ -271,15 +271,15 @@ whats the weather like in singapore, % chance of ran , in Japanese and imperial 
 
 ### 天気予報 🌤️
 
-| メトリック       | シンガポール                  |
-|-----------------|----------------------------|
-| 天気概要         | 一時的に曇りと雨が予想されます。|
-| 気温             | 28.24°F                    |
-| 紫外線指数 (UVI) | 10                         |
-| 湿度             | 78%                        |
-| 風速             | 10.29 mph                  |
-| 風向             | 135°                       |
-| 降雨の確率       | 69%                        |
+| メトリック       | シンガポール           |
+|-------------|------------------|
+| 天気概要        | 一時的に曇りと雨が予想されます。 |
+| 気温          | 28.24°F          |
+| 紫外線指数 (UVI) | 10               |
+| 湿度          | 78%              |
+| 風速          | 10.29 mph        |
+| 風向          | 135°             |
+| 降雨の確率       | 69%              |
 
 #### 紫外線対策について (UVI 10) ☀️
 
@@ -299,15 +299,15 @@ In English, using Google Translate:
 
 ### Weather forecast 🌤️
 
-| Metric | Singapore |
-|-----------------|----------------------------|
-| Weather summary | Partly cloudy with rain expected. |
-| Temperature | 28.24°F |
-| Ultraviolet index (UVI) | 10 |
-| Humidity | 78% |
-| Wind speed | 10.29 mph |
-| Wind direction | 135° |
-| Chance of rain | 69% |
+| Metric                  | Singapore                         |
+|-------------------------|-----------------------------------|
+| Weather summary         | Partly cloudy with rain expected. |
+| Temperature             | 28.24°F                           |
+| Ultraviolet index (UVI) | 10                                |
+| Humidity                | 78%                               |
+| Wind speed              | 10.29 mph                         |
+| Wind direction          | 135°                              |
+| Chance of rain          | 69%                               |
 
 #### UV protection (UVI 10) ☀️
 
