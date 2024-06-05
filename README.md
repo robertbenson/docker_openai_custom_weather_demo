@@ -214,7 +214,7 @@ result = {
         "latitude": latitude,
         "longitude": longitude,
     }
-   ```
+```
 
 ### Example prompt
 ```console
@@ -259,9 +259,6 @@ Prompt asking for output to be in Japanese
 whats the weather like in singapore, % chance of ran , in Japanese and imperial units
 ```
 #### response
-
-##### 1st response
-The prompt asked for the weather to be in Japanese, which it did, however the UV index protection advice was in English.
 
 ```console
 ### 天気予報 🌤️
