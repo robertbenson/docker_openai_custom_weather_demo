@@ -9,7 +9,7 @@
 
 This is a customizable Weather Python script using OpenAI [function calling](https://platform.openai.com/docs/guides/function-calling) and the OpenAI example [Code provided](https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models).
 
-A Docker image is available.
+This demo is available as a Docker image: `docker pull rbenson789/demo_openai_weather`
 
 
 # Retrieval-Augmented Generation (RAG)
@@ -39,7 +39,7 @@ RAG allows the model to consider data that was not originally known to the LLM.
 
 The example OpenAI [Code](https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models) has been modified to:
 
-1. modify the content for my use case, add actual real-time weather (openweather) and add prompt
+1. change the content for my use case, add actual real-time weather (openweather) and add prompt
 2. make a Docker Hub repository `rbenson789/demo_openai_weather`
 
 The repository on Docker Hub can be pulled and run on a local machine.
