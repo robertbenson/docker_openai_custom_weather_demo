@@ -242,7 +242,7 @@ Using the example prompt,the model has detected that there are 3 locations in th
 ### Response
 
 
-```console
+
 | Metric         | Sydney 🌧️                  | Paris 🌧️                   | Dublin 🌧️                |
 |----------------|----------------------------|----------------------------|--------------------------|
 | **Temperature**| 59°F                        | 66.9°F                      | 57.7°F                   |
@@ -259,7 +259,7 @@ Using the example prompt,the model has detected that there are 3 locations in th
 - **Dublin (UVI 4.41)**: Moderate risk. Don a hat and sunglasses, and apply broad-spectrum SPF 30+ sunscreen if outside for prolonged periods.
 
 Stay prepared and stay safe!
-```
+
 ### Language
 Prompt asking for output to be in Japanese 
 
@@ -268,7 +268,7 @@ whats the weather like in singapore, % chance of ran , in Japanese and imperial 
 ```
 #### response
 
-```console
+
 ### 天気予報 🌤️
 
 | メトリック       | シンガポール                  |
@@ -291,12 +291,12 @@ whats the weather like in singapore, % chance of ran , in Japanese and imperial 
 お出かけの際はこれらの対策を徹底してください。
 
 
-```
 
-```
+
+
 In English, using Google Translate:
 
-```console
+
 ### Weather forecast 🌤️
 
 | Metric | Singapore |
@@ -317,7 +317,7 @@ In English, using Google Translate:
 - **Indoor activities**: Avoid direct UV rays by staying indoors as much as possible.
 
 Please be sure to follow these precautions when going out.
-```
+
 
 
 <img src="docker-logo-blue.svg" alt="dockerfile to container png" width="200"/>
@@ -435,6 +435,8 @@ docker pull rbenson789/demo_openai_weather
 ```
 
  
+### Weather forecast 🌤️
+
 
 
 
