@@ -9,7 +9,15 @@
 
 This is a customizable Weather Python script using OpenAI [function calling](https://platform.openai.com/docs/guides/function-calling) and the OpenAI example [Code provided](https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models).
 
-This demo is available as a Docker image: `docker pull rbenson789/demo_openai_weather`
+This demo is available as a Docker image: 
+
+
+
+
+| Docker | Command                                         |
+|--------|-------------------------------------------------|
+| Pull   | `docker pull rbenson789/demo_openai_weather`    |
+| Run    | `docker run -i  rbenson789/demo_openai_weather` |
 
 
 # Retrieval-Augmented Generation (RAG)
