@@ -13,13 +13,13 @@ from typing_extensions import override
 client = OpenAI()
 load_dotenv('.env')
 
-def graceful_shutdown(signum, frame):
-    print("Received SIGTERM signal. Performing cleanup...")
-    # Perform cleanup here
-    sys.exit(0)
-
-# Register the SIGTERM signal handler
-signal.signal(signal.SIGTERM, graceful_shutdown)
+# def graceful_shutdown(signum, frame):
+#     print("Received SIGTERM signal. Performing cleanup...")
+#     # Perform cleanup here
+#     sys.exit(0)
+#
+# # Register the SIGTERM signal handler
+# signal.signal(signal.SIGTERM, graceful_shutdown)
 
 def convert_wind_speed(wind_speed, unit):
     """wind speed will be in meters per second. Convert to unit accordingly"""

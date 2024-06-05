@@ -7,7 +7,9 @@
 # Demo Weather app using OpenAI - _Function Calling_
 ## Python code and Docker Image
 
-This is a customizable Weather Python script using OpenAI [function calling](https://platform.openai.com/docs/guides/function-calling) and the OpenAI example [Code provided](https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models).
+This is a Python script using OpenAI that uses a _natural language_ prompt to demonstrate the OpenAI [function calling](https://platform.openai.com/docs/guides/function-calling) and the OpenAI example [Code provided](https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models).
+
+The version at OpenAI has **mock** weather api calls, this version will use real-time OpenWeather api calls and ask for addition additional and formatting.
 
 This demo is available as a Docker image: 
 
@@ -95,7 +97,9 @@ Using the information in the user prompt, the model will make a response using c
 | Grammar and spelling | be accurate                                                                                                                                         |
 
 
-### Usage for this script
+### Usage for this prompt
+
+Using the prompt guidelines, enter a natural language prompt
 
 ```console
     What's the weather like in <location 1> <location 2> [<location>...] [% chance of rain] [language] [metric | imperial]
@@ -433,9 +437,6 @@ docker run -i  rbenson789/demo_openai_weather
 docker pull rbenson789/demo_openai_weather
 
 ```
-
- 
-### Weather forecast 🌤️
 
 
 
