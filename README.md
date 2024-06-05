@@ -7,7 +7,10 @@
 # Demo Weather app using OpenAI - _Function Calling_
 ## Python code and Docker Image
 
-This is a customizable Weather app using OpenAI [function calling](https://platform.openai.com/docs/guides/function-calling)
+This is a customizable Weather Python script using OpenAI [function calling](https://platform.openai.com/docs/guides/function-calling) and the OpenAI example [Code provided](https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models).
+
+A Docker image is available.
+
 
 # Retrieval-Augmented Generation (RAG)
 
@@ -20,7 +23,7 @@ Information may be new, and may have missed the last LLM build. For example, a c
 
 
 
-The retrieved information, using predefined api's, is used to "augment" the model data to give more detailed responses.
+The retrieved information, using predefined api's, is used to "augment" the model data to give more detailed, grounded responses.
 
 
 RAG allows the model to consider data that was not originally known to the LLM. 
@@ -67,17 +70,57 @@ Using the information in the user prompt, the model will make a response using c
 
 
 ## Customisable Prompt
-### Usage
+
+### Guidelines for writing a good prompt
+
+| #                    | Comment                                                                                                                                        | 
+|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| Persona              | Give the model an idea of the  _type of person_ that you would like a response from.<br/>e.g.You are a weather bot, <br/>you are a maths expert etc |
+| Be Clear and concise | no unnecessary commentary to distract                                                                                                          |
+| Context              | e.g. _explain the theory of relativity_                                                                                                        |
+| Scope                | define boundaries, in 200 words ..                                                                                                             |
+| Specific             | avoid tell me, use What ...                                                                                                                    |
+| Simple               | avoid jargon, technical phrases                                                                                                                |
+| Examples             | en for English, nl (Dutch), fr (French)                                                                                                        |
+| Break Down           | First, explain ... , then ....                                                                                                                 |
+| Format               | e.g. Report in table format                                                                                                                    |
+| Grammar and spelling | be accurate                                                                                                                                    |
+
+
+### Usage for this script
 
 ```console
-    What's the weather like in <location 1> <location 2> [<location>...] 
-    [% chance of rain, sun index] [language] 
-    [metric | imperial]
+    What's the weather like in <location 1> <location 2> [<location>...] [% chance of rain] [language] [metric | imperial]
 ```
 
 
 
-## OpenAI Tools/Functions
+## Assistant
+
+The assistant requires 3 inputs:
+1. The model version, in this case gpt-4o
+2. Functions to run
+3. Instructions
+
+### Instructions
+
+This gives the model:
+1. A persona to take, in this case, it is a weather bot. 
+2. directions on how to run, i.e. use functions to answer questions.
+3. The uv index on its own is not that meaningful. The model is told to refine that answer to add guidelines re sun exposure.
+4. Add an emoji
+
+```console
+    You are a weather bot. 
+    Use the provided functions to answer questions. 
+    Add a detailed description of the precautions to take for that particular uvi. 
+    All output should be in requested language. 
+    Add an emoji for the weather eg sun for sunshine. 
+    The output should be in a table format with metrics down and locations across
+```
+
+
+### Tools/Functions
 
 **Function calling** uses defined functions that the model calls to retrieve relevant data. The functions and respective arguments are defined.
 The model determines the function to call by the information available to it, using input, context and inference. 
@@ -156,6 +199,23 @@ tools=[
 
         ]
 ```
+
+JSON response from the _get_current_weather_ function. 
+The returned information from the api call will be augmented to the model. The model response will contain the following information. 
+
+```JSON
+result = {
+        "description": weather_daily_summary,
+        "temperature": weather_daily_temperature,
+        "feels_like": weather_daily_temperature_feels_like,
+        "humidity": weather_daily_humidity,
+        "wind_speed": weather_daily_wind_speed,
+        "wind_direction": weather_daily_wind_degree,
+        "latitude": latitude,
+        "longitude": longitude,
+    }
+   ```
+
 ### Example prompt
 ```console
     What's the weather like in Sydney, Paris and Dublin, % chance of rain, in imperial units 
@@ -164,92 +224,94 @@ tools=[
 ## Prompt and Response
 
 
+
+
 ### request weather in 3 cities
 
 Using the example prompt,the model has detected that there are 3 locations in the prompt and has extracted model arguments for api calls.
 
 
 ### Response
+
+
 ```console
-### Weather Summary
+| Metric         | Sydney 🌧️                  | Paris 🌧️                   | Dublin 🌧️                |
+|----------------|----------------------------|----------------------------|--------------------------|
+| **Temperature**| 59°F                        | 66.9°F                      | 57.7°F                   |
+| **Description**| Partly cloudy in morning, rain in the afternoon  | Partly cloudy with rain   | Partly cloudy with rain  |
+| **Wind Speed** | 15.3 mph                    | 9.9 mph                     | 15 mph                   |
+| **Wind Direction** | 188°                   | 284°                        | 282°                     |
+| **Humidity**   | 68%                         | 60%                         | 55%                      |
+| **UVI**        | 2.85                        | 3.63                        | 4.41                     |
+| **Rain Probability** | 100%                  | 27%                         | 20%                      |
 
-#### Sydney, Australia
-- **Weather**: Clear sky in the morning, with partly cloudy in the afternoon.
-- **Temperature**: 18.49°F
-  - Feels Like: 17.73°F (day), 16.43°F (night), 19.18°F (evening), 11.2°F (morning)
-- **Humidity**: 51%
-- **Wind**: 13.65 mph from the NNE (13°)
-- **Rain Probability**: 0%
-- **UV Index**: 3.25
+### UV Index Precautions:
+- **Sydney (UVI 2.85)**: Low risk. It's safe to be outside. Wear sunglasses on bright days.
+- **Paris (UVI 3.63)**: Moderate risk. Use sunscreen SPF 30+, wear sunglasses and a hat if outside for extended periods.
+- **Dublin (UVI 4.41)**: Moderate risk. Don a hat and sunglasses, and apply broad-spectrum SPF 30+ sunscreen if outside for prolonged periods.
 
-#### Paris, France
-- **Weather**: Partly cloudy with rain.
-- **Temperature**: 13.61°F
-  - Feels Like: 13.53°F (day), 15.73°F (night), 14.5°F (evening), 12.94°F (morning)
-- **Humidity**: 96%
-- **Wind**: 10.16 mph from the SW (219°)
-- **Rain Probability**: 100%
-- **UV Index**: 1.95
-
-#### Dublin, Ireland
-- **Weather**: Partly cloudy with rain.
-- **Temperature**: 16.06°F
-  - Feels Like: 15.65°F (day), 12.3°F (night), 14.03°F (evening), 11.26°F (morning)
-- **Humidity**: 74%
-- **Wind**: 13.33 mph from the WSW (259°)
-- **Rain Probability**: 100%
-- **UV Index**: 4.72
-
-Make sure to carry an umbrella in Paris and Dublin!
+Stay prepared and stay safe!
 ```
 ### Language
 Prompt asking for output to be in Japanese 
 
 ```console
-Enter prompt: what's the weather like in singapore, % chance of rain, 
-sun index in Japanese in imperial units
+whats the weather like in singapore, % chance of ran , in Japanese and imperial units
 ```
-response
+#### response
+
+##### 1st response
+The prompt asked for the weather to be in Japanese, which it did, however the UV index protection advice was in English.
 
 ```console
-### シンガポールの天気
-- **説明**: 晴れ間もあるが、雨が予想される
-- **気温**: 30.15°F
-- **体感温度**:
-  - 日中: 35.16°F
-  - 夜: 33.15°F
-  - 夕方: 33.55°F
-  - 朝: 33.45°F
-- **湿度**: 69%
-- **風速**: 10.98マイル/時
-- **風向**: 199°
+### 天気予報 🌤️
 
-### 雨の確率と紫外線指数
-- **雨の確率**: 100%
-- **紫外線指数 (UVI)**: 8.72
+| メトリック       | シンガポール                  |
+|-----------------|----------------------------|
+| 天気概要         | 一時的に曇りと雨が予想されます。|
+| 気温             | 28.24°F                    |
+| 紫外線指数 (UVI) | 10                         |
+| 湿度             | 78%                        |
+| 風速             | 10.29 mph                  |
+| 風向             | 135°                       |
+| 降雨の確率       | 69%                        |
 
-全天候に備え、十分な対策をお取りください。
+#### 紫外線対策について (UVI 10) ☀️
+
+- **非常に強い紫外線に注意**: なるべく外出を控え、特に午前10時から午後4時の間は注意が必要です。
+- **日焼け止めを使用**: 高いSPF値の日焼け止めをこまめに塗り直しましょう。
+- **防護服**: 長袖シャツ、長ズボン、帽子、サングラスを着用しましょう。
+- **屋内活動**: できるだけ屋内で活動し、直接の紫外線を避けましょう。
+
+お出かけの際はこれらの対策を徹底してください。
+
+
+```
+
 ```
 In English, using Google Translate:
 
 ```console
-### Singapore Weather
-- **Description**: Sunny with rain expected
-- **Temperature**: 30.15°F
-- **Feels like**:
-- Day: 35.16°F
-- Night: 33.15°F
-- Evening: 33.55°F
-- Morning: 33.45°F
-- **Humidity**: 69%
-- **Wind Speed**: 10.98 miles per hour
-- **Wind Direction**: 199°
+### Weather forecast 🌤️
 
-### Chance of Rain and UV Index
-- **Chance of Rain**: 100%
-- **Ultraviolet Ray Index (UVI)**: 8.72
+| Metric | Singapore |
+|-----------------|----------------------------|
+| Weather summary | Partly cloudy with rain expected. |
+| Temperature | 28.24°F |
+| Ultraviolet index (UVI) | 10 |
+| Humidity | 78% |
+| Wind speed | 10.29 mph |
+| Wind direction | 135° |
+| Chance of rain | 69% |
 
-Please be prepared for all weather conditions and take adequate precautions.
+#### UV protection (UVI 10) ☀️
+
+- **Beware of very strong UV rays**: Avoid going outside as much as possible, especially between 10am and 4pm.
+- **Use sunscreen**: Apply a high SPF sunscreen and reapply frequently.
+- **Protective clothing**: Wear long sleeve shirts, long pants, hats and sunglasses.
+- **Indoor activities**: Avoid direct UV rays by staying indoors as much as possible.
+
+Please be sure to follow these precautions when going out.
 ```
 
 

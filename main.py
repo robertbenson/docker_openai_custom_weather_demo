@@ -1,6 +1,8 @@
 import json
 import os
 import requests
+import sys
+import signal
 
 from openai import OpenAI
 from dotenv import load_dotenv
@@ -11,13 +13,20 @@ from typing_extensions import override
 client = OpenAI()
 load_dotenv('.env')
 
+def graceful_shutdown(signum, frame):
+    print("Received SIGTERM signal. Performing cleanup...")
+    # Perform cleanup here
+    sys.exit(0)
+
+# Register the SIGTERM signal handler
+signal.signal(signal.SIGTERM, graceful_shutdown)
 
 def convert_wind_speed(wind_speed, unit):
     """wind speed will be in meters per second. Convert to unit accordingly"""
     if unit.lower() == 'metric':
         return wind_speed * 3.6
     elif unit.lower() == 'imperial':
-        
+
         # 1 mile per day = 1.60934 km/h
         return wind_speed * 2.23694
     else:
@@ -25,21 +34,16 @@ def convert_wind_speed(wind_speed, unit):
 
 
 def get_current_weather(latitude, longitude, lang, units):
-    """Get the current weather in a given latitude and longitude"""
-    # base = "https://api.openweathermap.org/data/2.5/weather"
+    """Get the current weather in a given latitude and longitude."""
     base = "https://api.openweathermap.org/data/3.0/onecall"
     key = os.getenv('WEATHERMAP_API_KEY3.0')
     key = os.getenv('WEATHERMAP_API_KEY')
-    # print("key for weather api key is {}".format(key))
-    # request_url = f"{base}?lat={latitude}&lon={longitude}&appid={key}&units=metric"
+
     request_url = f"{base}?lat={latitude}&lon={longitude}&appid={key}&units=metric&lang={lang}&units={units}"
 
     response = requests.get(request_url)
     data = response.json()
-    # print("data from url call is : ", data)
 
-    # print("data from url call is main temp: ", data['daily'][0])
-    # weather_description = data['daily'][0]
     weather_daily_summary = data['daily'][0]['summary']
     weather_daily_humidity = data['daily'][0]['humidity']
     weather_daily_wind_speed = data['daily'][0]['wind_speed']
@@ -47,12 +51,13 @@ def get_current_weather(latitude, longitude, lang, units):
                                                   units)
     weather_daily_wind_degree = data['daily'][0]['wind_deg']
     weather_daily_temperature = data['daily'][0]['temp']['day']
+    weather_daily_uvi = data['daily'][0]['uvi']
     weather_daily_temperature_feels_like = data['daily'][0]['feels_like']
 
     result = {
         "description": weather_daily_summary,
         "temperature": weather_daily_temperature,
-        "feels_like": weather_daily_temperature_feels_like,
+        "uvi": weather_daily_uvi,
         "humidity": weather_daily_humidity,
         "wind_speed": weather_daily_wind_speed,
         "wind_direction": weather_daily_wind_degree,
@@ -65,29 +70,24 @@ def get_current_weather(latitude, longitude, lang, units):
 
 def get_rain_probability(latitude, longitude):
     """Get the probability of rain in a given latitude and longitude"""
-    # base = "https://api.openweathermap.org/data/2.5/weather"
     base = "https://api.openweathermap.org/data/3.0/onecall"
     key = os.getenv('WEATHERMAP_API_KEY3.0')
     request_url = f"https://api.openweathermap.org/data/3.0/onecall?lat={latitude}&lon={longitude}&appid=61b0dd3842dc8e76fb2335d59de1570f"
 
     response = requests.get(request_url)
     data = response.json()
-    # print("\n\ndata from url probability of rain 3.0 call is : ", data)
+
     weather_daily = data['daily'][0]
     weather_daily_summary = data['daily'][0]['summary']
     weather_daily_pop = data['daily'][0]['pop']
-    weather_daily_uvi = data['daily'][0]['uvi']
-    # print("weather daily: ",weather_daily)
-    # print("weather daily summary: ",weather_daily_summary)
 
     result = {
         "latitude": latitude,
         "longitude": longitude,
         "probability": weather_daily_pop,
-        "uvi": weather_daily_uvi,
+        # "uvi": weather_daily_uvi,
         "summary": weather_daily_summary,
     }
-
 
     return json.dumps(result)
 
@@ -162,7 +162,7 @@ class EventHandler(AssistantEventHandler):
 
 def setup(prompt: str):
     assistant = client.beta.assistants.create(
-        instructions="You are a weather bot. Use the provided functions to answer questions.",
+        instructions="You are a weather bot. Use the provided functions to answer questions. Add a detailed description of the precautions to take for that particular uvi. All output should be in requested language. Add an emoji for the weather eg sun for sunshine. The output should be in a table format with metrics down and locations across",
         model="gpt-4o",
         tools=[
             {
@@ -240,23 +240,27 @@ if __name__ == '__main__':
     """Keep prompting the user to enter their input until they quit"""
 
     while True:
-        content_example_1 = \
-            "What's the weather like in <location 1> <location 2> [<location>...] [% chance of rain, sun index] [language] [metric | imperial]"
+        try:
+            content_example_1 = \
+                "What's the weather like in <location 1> <location 2> [<location>...] [% chance of rain] [language] [metric | imperial]"
 
+            content_quit = "Quit: Q and then Ctrl c"
 
-        content_quit = "Q, quit or exit"
+            print(80 * '*')
+            print(80 * '*')
 
-        print(80 * '*')
-        print(80 * '*')
-
-        print("\n")
-        print(content_example_1)
-        print("\n")
-        print(content_quit)
-        print("\n")
-        prompt = input("Enter prompt: ")
-        setup(prompt)
-        if prompt == "Q" or prompt == "quit" or prompt == "exit" or prompt == "q":
             print("\n")
-            print("Bye")
+            print(content_example_1)
+            print("\n")
+            print(content_quit)
+            print("\n")
+            prompt = input("Enter prompt: ")
+            if prompt == "Q" or prompt == "quit" or prompt == "exit" or prompt == "q":
+                print("\n")
+                print("Bye")
+                break
+            else:
+                setup(prompt)
+        except KeyboardInterrupt:
+            print("Interrupted by user. Exiting...")
             break
