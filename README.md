@@ -203,7 +203,7 @@ tools=[
 JSON response from the _get_current_weather_ function. 
 The returned information from the api call will be augmented to the model. The model response will contain the following information. 
 
-```JSON
+```console
 result = {
         "description": weather_daily_summary,
         "temperature": weather_daily_temperature,
