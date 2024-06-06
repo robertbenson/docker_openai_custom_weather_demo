@@ -244,7 +244,7 @@ if __name__ == '__main__':
             content_example_1 = \
                 "What's the weather like in <location 1> <location 2> [<location>...] [% chance of rain] [language] [metric | imperial]"
 
-            content_quit = "Quit: Q and then Ctrl c"
+            content_quit = "Quit: Q and then Ctrl + C"
 
             print(80 * '*')
             print(80 * '*')
