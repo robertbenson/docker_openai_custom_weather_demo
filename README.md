@@ -1,7 +1,7 @@
 
 
 [//]: # (<img src="openai2.png" alt="openai" width="85"/><img src="https://github.com/devicons/devicon/raw/master/icons/docker/docker-original.svg" alt="docker" width="100"/><img src="https://github.com/devicons/devicon/raw/master/icons/python/python-original.svg" alt="python" width="90"/> )
-<img src="openai2.png" alt="openai" width="85"/> <img src="docker-mark-blue.svg" alt="docker" width="100"/><img src="https://github.com/devicons/devicon/raw/master/icons/python/python-original.svg" alt="python" width="90"/> 
+<img src="openai2.png" alt="openai" width="65"/> <img src="docker-mark-blue.svg" alt="docker" width="80"/><img src="https://github.com/devicons/devicon/raw/master/icons/python/python-original.svg" alt="python" width="70"/> 
 
 
 # Demo Weather app using OpenAI - _Function Calling_
@@ -49,8 +49,10 @@ RAG allows the model to consider data that was not originally known to the LLM.
 
 The example OpenAI [Code](https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models) has been modified to:
 
-1. change the content for my use case, add actual real-time weather (openweather) and add prompt
-2. make a Docker Hub repository `rbenson789/demo_openai_weather`
+1. change the content for my use case, add actual real-time weather (openweather)
+2. change the instructions , request additional information and format the output
+3. add a loop to allow repeated prompt requests
+4. make a Docker Hub repository `rbenson789/demo_openai_weather`
 
 The repository on Docker Hub can be pulled and run on a local machine.
 
@@ -97,13 +99,62 @@ Using the information in the user prompt, the model will make a response using c
 | Grammar and spelling | be accurate                                                                                                                                         |
 
 
-### Usage for this prompt
+### _Usage_ for this prompt
 
-Using the prompt guidelines, enter a natural language prompt
+The word usage is in italics. 
+
+There is no strictly correct _Usage_ in the traditional sense.
+
+OpenAI with function calling does not operate in a strictly defined structure of semantics and arguments.
+
+There is no one correctly structured syntax with the correct number of arguments.
+
+
+Using the prompt guidelines, enter a natural language prompt along the lines of:
 
 ```console
     What's the weather like in <location 1> <location 2> [<location>...] [% chance of rain] [language] [metric | imperial]
 ```
+
+this will also work, but be prepared for some _interesting_ results.
+```console
+    <location 1> <location 2> [<location>...]
+```
+
+### Hallucination
+
+When the prompt is vague, lacks context, the model may generate a response that includes incorrect or fabricated information.
+
+This is called hallucination.
+
+Enter random words for the prompt, expect a random answer.
+```console
+    horse
+```
+
+```console
+| Metric          | Horse Location 🌧️             |
+|-----------------|-------------------------------|
+| Description     | Partly cloudy with rain       |
+| Temperature     | 15.57 °C                      |
+| UV Index        | 5.26                          |
+| Humidity        | 55%                           |
+| Wind Speed      | 18.324 km/h                   |
+| Wind Direction  | 293°                          |
+| Latitude        | 51.9257                       |
+| Longitude       | -1.3704                       |
+
+**Precautions for UV Index 5.26:**
+- Wear sunglasses with UV protection to safeguard your eyes.
+- Use sunscreen with SPF 30+ to protect exposed skin.
+- Wear a hat to shield your face and neck.
+- Stay in the shade during midday hours when the sun is strongest.
+- Seek protective clothing like long sleeves and pants where possible.
+
+Stay safe and enjoy your day!
+```
+
+**The more specific the prompt the better the output.**
 
 
 
