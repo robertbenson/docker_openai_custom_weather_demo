@@ -9,7 +9,7 @@
 
 This is a Python script using OpenAI that uses a _natural language_ prompt to demonstrate the OpenAI [function calling](https://platform.openai.com/docs/guides/function-calling) capabilities using the [OpenAI example Code](https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models).
 
-The version at OpenAI has **mock** weather api calls, this version will use real-time OpenWeather api calls and ask for addition additional and formatting.
+The version at OpenAI has **mock** weather api calls, this version will use real-time OpenWeather api calls and ask for additional formatting.
 
 This demo is available as a Docker image: 
 
