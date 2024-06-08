@@ -141,9 +141,13 @@ Enter random words for the prompt, expect a random answer.
 A random response is _"technically correct"_ in that it aligns with how the model is designed to work. 
 
 However, the goal is to provide accurate and reliable information.
+
+#### Prompt
 ```console
     horse
 ```
+
+This prompt does not meet many of the guideline criteria. A random response should therefore be expected.
 
 This is the response for _horse_.
 
@@ -314,6 +318,24 @@ result = {
 ### request weather in 3 cities
 
 Using the example prompt,the model has detected that there are 3 locations in the prompt and has extracted model arguments for api calls.
+
+#### Prompt : does it meet the guideline criteria ? 
+| # |  | Comment                                                                                     |
+|--|--|---------------------------------------------------------------------------------------------|
+| Persona | &check; | instructions assigned the role of a weather bot                                             |
+| Context | &check; |                                                                                             |
+| Scope | &check; | 3 locations requested                                                                       |
+| Specific | &check; |                                                                                             |
+| Simple | &check; |                                                                                             |
+| Examples | &check; | the functions have been provided with examples <br/>en for English, nl (Dutch), fr (French) |
+| Break Down | &check; |                                                                                             |
+| Format | &check; | instructions has requested the output in table format etc                                   |
+| Grammar and spelling | &check; |                                                                                             |
+
+
+
+
+
 
 
 ### Response
