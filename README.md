@@ -7,7 +7,7 @@
 # Demo Weather app using OpenAI - _Function Calling_
 ## Python code and Docker Image
 
-This is a Python script using OpenAI that uses a _natural language_ prompt to demonstrate the OpenAI [function calling](https://platform.openai.com/docs/guides/function-calling) capabilities using the [OpenAI example Code](https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models).
+This is a Python script using OpenAI that uses a _natural language_ prompt to demonstrate the OpenAI [function calling](https://platform.openai.com/docs/guides/function-calling) capabilities using the [OpenAI example code](https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models).
 
 The version at OpenAI has **mock** weather api calls, this version will use real-time OpenWeather api calls and ask for additional formatting.
 
@@ -33,12 +33,16 @@ GDPR regulations introduced by the European Union in 2018 have reduced the amoun
 Research and Development, finance, defense , medical are example sectors that would have private information behind firewalls.
 
 
-Information may be new, and may have missed the last LLM build. For example, a car manufacturer has released a new car since the last build and wants to make that information available.
+Information may be new, and may have missed the last LLM build. 
 
 
+## _It doesn't know what it doesn't know_ - Donald Rumsfeld
 
+The LLM model can only work with data available to it. However, function calling, can make data available to the model, that would not have ordinarily been be available to it.
 
 The retrieved information, using predefined api's, is used to "augment" the model data to give more detailed, grounded responses.
+
+For example, a car manufacturer has released a new car since the last LLM build and wants to make that information available. This can now be achieved with function calling.
 
 
 # RAG allows the model to consider data that was not originally known to the LLM. 
