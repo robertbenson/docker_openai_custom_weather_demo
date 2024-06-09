@@ -317,17 +317,17 @@ result = {
 
 
 #### Prompt : does it meet the guideline criteria ? 
-| # |  | Comment                                                                                 |
-|--|--|-----------------------------------------------------------------------------------------|
-| Persona | &check; | instructions: assigned the role of a weather bot                                        |
-| Context | &check; |                                                                                         |
-| Scope | &check; |                                                                                         |
-| Specific | &check; |                                                                                         |
-| Simple | &check; |                                                                                         |
+| # |  | Comment                                                                                     |
+|--|--|---------------------------------------------------------------------------------------------|
+| Persona | &check; | instructions, assigned in Python code: assigned the role of a weather bot                   |
+| Context | &check; |                                                                                             |
+| Scope | &check; |                                                                                             |
+| Specific | &check; |                                                                                             |
+| Simple | &check; |                                                                                             |
 | Examples | &check; | the functions have been provided with examples <br/>en for English, nl (Dutch), fr (French) |
-| Break Down | &check; |                                                                                         |
-| Format | &check; | instructions: requested the output in table format etc                                  |
-| Grammar and spelling | &check; |                                                                                         |
+| Break Down | &check; |                                                                                             |
+| Format | &check; | instructions, assigned in Pythond code: requested the output in table format etc            |
+| Grammar and spelling | &check; |                                                                                             |
 
 
 
