@@ -315,26 +315,26 @@ result = {
 
 
 
+
+#### Prompt : does it meet the guideline criteria ? 
+| # |  | Comment                                                                                 |
+|--|--|-----------------------------------------------------------------------------------------|
+| Persona | &check; | instructions: assigned the role of a weather bot                                        |
+| Context | &check; |                                                                                         |
+| Scope | &check; |                                                                                         |
+| Specific | &check; |                                                                                         |
+| Simple | &check; |                                                                                         |
+| Examples | &check; | the functions have been provided with examples <br/>en for English, nl (Dutch), fr (French) |
+| Break Down | &check; |                                                                                         |
+| Format | &check; | instructions: requested the output in table format etc                                  |
+| Grammar and spelling | &check; |                                                                                         |
+
+
+
+
 ### request weather in 3 cities
 
 Using the example prompt,the model has detected that there are 3 locations in the prompt and has extracted model arguments for api calls.
-
-#### Prompt : does it meet the guideline criteria ? 
-| # |  | Comment                                                                                     |
-|--|--|---------------------------------------------------------------------------------------------|
-| Persona | &check; | instructions assigned the role of a weather bot                                             |
-| Context | &check; |                                                                                             |
-| Scope | &check; | 3 locations requested                                                                       |
-| Specific | &check; |                                                                                             |
-| Simple | &check; |                                                                                             |
-| Examples | &check; | the functions have been provided with examples <br/>en for English, nl (Dutch), fr (French) |
-| Break Down | &check; |                                                                                             |
-| Format | &check; | instructions has requested the output in table format etc                                   |
-| Grammar and spelling | &check; |                                                                                             |
-
-
-
-
 
 
 
