@@ -9,7 +9,7 @@
 
 This is a Python script using OpenAI that uses a _natural language_ prompt to demonstrate the OpenAI [function calling](https://platform.openai.com/docs/guides/function-calling) capabilities using the [OpenAI example code](https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models).
 
-The version at OpenAI has **mock** weather api calls, this version will use real-time OpenWeather api calls and ask for additional formatting.
+The version at OpenAI has **_mock_** weather api calls, this version will use real-time OpenWeather api calls and ask for additional formatting.
 
 This demo is available as a Docker image: 
 
@@ -26,11 +26,11 @@ This demo is available as a Docker image:
 
 RAG allows real-time data and other data, that would not ordinarily be available to the LLM, to be incorporated into model generated responses.
 
-There may be valid reasons to keep information out of the public domain and to only use it in controlled situations.
+There may be valid reasons to keep information out of the public domain:
 
-GDPR regulations introduced by the European Union in 2018 have reduced the amount of personal information available in the public domain. 
-
-Research and Development, finance, defense , medical are example sectors that would have private information behind firewalls.
+- Data regulations e.g. GDPR regulations introduced by the European Union in 2018 have reduced the amount of personal information available in the public domain.
+- Competitive advantage: Research and Development 
+- Confidentiality: finance, defense , medical are example sectors that would keep the information confidential.
 
 
 Information may be new, and may have missed the last LLM build. 
@@ -38,7 +38,9 @@ Information may be new, and may have missed the last LLM build.
 
 ## _It doesn't know what it doesn't know_ - Donald Rumsfeld
 
-The LLM model can only work with data available to it. However, function calling, can make data available to the model, that would not have ordinarily been be available to it.
+The LLM model can only work with data available to it. If it doesn't know about it, it will not be part of the build.
+
+However, function calling, can make data available to the model, that would not have ordinarily been available to it.
 
 The retrieved information, using predefined api's, is used to "augment" the model data to give more detailed, grounded responses.
 
@@ -110,13 +112,9 @@ Using the information in the user prompt, the model will make a response using c
 
 ### _Usage_ for this prompt
 
-The word usage is in italics. 
+The word usage is in italics. There is no strictly correct _Usage_ in the traditional sense.
 
-There is no strictly correct _Usage_ in the traditional sense.
-
-OpenAI with function calling does not operate in a strictly defined structure of semantics and arguments.
-
-There is no one correctly structured syntax with the correct number of arguments.
+OpenAI with **_function calling_** does not operate in a strictly defined structure of semantics and arguments. 
 
 
 Using the prompt guidelines, enter a natural language prompt along the lines of:
@@ -132,7 +130,7 @@ this will also work, but be prepared for some _interesting_ results.
 
 ### Hallucination
 
-When the prompt is vague, lacks context, the model may generate a response that includes incorrect or fabricated information.
+When the prompt is vague, lacks context, is an unsolvable question , the model may generate a response that includes incorrect or fabricated information.
 
 This is called hallucination.
 
@@ -317,16 +315,16 @@ result = {
 
 
 #### Prompt : does it meet the guideline criteria ? 
-| # |  | Comment                                                                                     |
-|--|--|---------------------------------------------------------------------------------------------|
-| Persona | &check; | instructions, assigned in Python code: assigned the role of a weather bot                   |
-| Context | &check; |                                                                                             |
-| Scope | &check; |                                                                                             |
-| Specific | &check; |                                                                                             |
-| Simple | &check; |                                                                                             |
-| Examples | &check; | the functions have been provided with examples <br/>en for English, nl (Dutch), fr (French) |
-| Break Down | &check; |                                                                                             |
-| Format | &check; | instructions, assigned in Pythond code: requested the output in table format etc            |
+| #                    |         | Comment                                                                                     |
+|----------------------|---------|---------------------------------------------------------------------------------------------|
+| Persona              | &check; | instructions, assigned in Python code: assigned the role of a weather bot                   |
+| Context              | &check; |                                                                                             |
+| Scope                | &check; |                                                                                             |
+| Specific             | &check; |                                                                                             |
+| Simple               | &check; |                                                                                             |
+| Examples             | &check; | the functions have been provided with examples <br/>en for English, nl (Dutch), fr (French) |
+| Break Down           | &check; |                                                                                             |
+| Format               | &check; | instructions, assigned in Python code: requested the output in table format etc             |
 | Grammar and spelling | &check; |                                                                                             |
 
 
