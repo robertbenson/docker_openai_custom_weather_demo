@@ -59,8 +59,8 @@ There may also be valid reasons to keep information out of the public domain:
 
 - Data regulations e.g. GDPR regulations introduced by the European Union in 2018 have reduced the amount of personal information available in the public domain.
 - Competitive advantage: Research and Development 
-- Confidentiality: finance, defense , medical are example sectors that would keep the information confidential.
-- Security, govt agencies etc will have confidential information.
+- Confidentiality: finance, defense , medical are example sectors that would keep information confidential.
+- Security, govt agencies etc. will have confidential information.
 
  
 
