@@ -52,14 +52,14 @@ python main.py
 
 RAG allows real-time data and other data, that would not ordinarily be available to the LLM, to be incorporated into model generated responses.
 
-New information, just release into the public domain will have missed the last LLM build.
+New information, just released into the public domain will have missed the last LLM build.
 
 There may also be valid reasons to keep information out of the public domain:
 
 - Data regulations e.g. GDPR regulations introduced by the European Union in 2018 have reduced the amount of personal information available in the public domain.
 - Competitive advantage: Research and Development 
 - Confidentiality: finance, defense , medical are example sectors that would keep the information confidential.
-- Security
+- Security, govt agencies etc will have confidential information.
 
  
 
