@@ -35,13 +35,14 @@ This demo is available as a Docker image:
 ## Running as a Python Script
 
 ### Install Packages
+_Check Virtual Environment, make sure to activate._
 
 | Package                          | install                        |
 |----------------------------------|--------------------------------|
 | env variables<br/>(hide api key) | `pip install python_dotenv `   |
 | OpenAI package                   | `pip install --upgrade openai` |
 
-Check Virtual Environment, make sure to activate.
+
 ```cmd
 python main.py
 ```
