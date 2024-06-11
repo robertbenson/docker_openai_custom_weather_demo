@@ -149,7 +149,7 @@ Using the information in the user prompt, the model will make a response using c
 | Break Down           | First, explain ... , then ....                                                                                                                      |
 | Format               | e.g. Report in table format                                                                                                                         |
 | Grammar and spelling | be accurate                                                                                                                                         |
-| Feasible             | Is the question been asked realistic and achievable ?                                                                                               |
+| Feasible             | Is the question being asked realistic and achievable ?                                                                                              |
 
 
 ### _Usage_ for this prompt
