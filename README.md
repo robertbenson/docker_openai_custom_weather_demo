@@ -34,6 +34,9 @@ This demo is available as a Docker image:
 
 ## Running as a Python Script
 
+### API Keys
+Two api keys are required. One for OpenAI and the other for OpenWeather. This will require setting up an account for each.
+
 ### Install Packages
 _Check Virtual Environment, make sure to activate._
 
@@ -125,18 +128,19 @@ Using the information in the user prompt, the model will make a response using c
 
 ### Guidelines for writing a good prompt
 
-| #                    | Comment                                                                                                                                             | 
-|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| Persona              | Give the model an idea of the  _type of person_ that you would like a response from.<br/>e.g.You are a weather bot, <br/>you are a maths expert etc |
-| Be Clear and concise | no unnecessary commentary to distract                                                                                                               |
-| Context              | e.g. _explain the theory of relativity_                                                                                                             |
-| Scope                | define boundaries, in 200 words ..                                                                                                                  |
-| Specific             | avoid tell me, use What ...                                                                                                                         |
-| Simple               | avoid jargon, technical phrases                                                                                                                     |
-| Examples             | en for English, nl (Dutch), fr (French)                                                                                                             |
-| Break Down           | First, explain ... , then ....                                                                                                                      |
-| Format               | e.g. Report in table format                                                                                                                         |
-| Grammar and spelling | be accurate                                                                                                                                         |
+| #                      | Comment                                                                                                                                             | 
+|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| Persona                | Give the model an idea of the  _type of person_ that you would like a response from.<br/>e.g.You are a weather bot, <br/>you are a maths expert etc |
+| Be Clear and concise   | no unnecessary commentary to distract                                                                                                               |
+| Context                | e.g. _explain the theory of relativity_                                                                                                             |
+| Scope                  | define boundaries, in 200 words ..                                                                                                                  |
+| Specific               | avoid tell me, use What ...                                                                                                                         |
+| Simple                 | avoid jargon, technical phrases                                                                                                                     |
+| Examples               | en for English, nl (Dutch), fr (French)                                                                                                             |
+| Break Down             | First, explain ... , then ....                                                                                                                      |
+| Format                 | e.g. Report in table format                                                                                                                         |
+| Grammar and spelling   | be accurate                                                                                                                                         |
+| Feasible and practical | Is the question been asked realistic and achievable ?                                                                                               |
 
 
 ### _Usage_ for this prompt
