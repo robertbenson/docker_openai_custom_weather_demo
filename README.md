@@ -40,11 +40,10 @@ Two api keys are required. One for OpenAI and the other for OpenWeather. This wi
 ### Install Packages
 _Check Virtual Environment, make sure to activate._
 
-| Package                          | install                        |
-|----------------------------------|--------------------------------|
-| env variables<br/>(hide api key) | `pip install python_dotenv `   |
-| OpenAI package                   | `pip install --upgrade openai` |
-
+| Package                          | install                       |
+|----------------------------------|-------------------------------|
+| env variables<br/>(hide api key) | <pre><code>pip install python_dotenv  |
+| OpenAI package                   | <pre><code>pip install --upgrade openai |
 
 ```cmd
 python main.py
@@ -128,19 +127,19 @@ Using the information in the user prompt, the model will make a response using c
 
 ### Guidelines for writing a good prompt
 
-| #                      | Comment                                                                                                                                             | 
-|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| Persona                | Give the model an idea of the  _type of person_ that you would like a response from.<br/>e.g.You are a weather bot, <br/>you are a maths expert etc |
-| Be Clear and concise   | no unnecessary commentary to distract                                                                                                               |
-| Context                | e.g. _explain the theory of relativity_                                                                                                             |
-| Scope                  | define boundaries, in 200 words ..                                                                                                                  |
-| Specific               | avoid tell me, use What ...                                                                                                                         |
-| Simple                 | avoid jargon, technical phrases                                                                                                                     |
-| Examples               | en for English, nl (Dutch), fr (French)                                                                                                             |
-| Break Down             | First, explain ... , then ....                                                                                                                      |
-| Format                 | e.g. Report in table format                                                                                                                         |
-| Grammar and spelling   | be accurate                                                                                                                                         |
-| Feasible and practical | Is the question been asked realistic and achievable ?                                                                                               |
+| #        | Comment                                                                                                                                             | 
+|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| Persona  | Give the model an idea of the  _type of person_ that you would like a response from.<br/>e.g.You are a weather bot, <br/>you are a maths expert etc |
+| Be Clear and concise | no unnecessary commentary to distract                                                                                                               |
+| Context  | e.g. _explain the theory of relativity_                                                                                                             |
+| Scope    | define boundaries, in 200 words ..                                                                                                                  |
+| Specific | avoid tell me, use What ...                                                                                                                         |
+| Simple   | avoid jargon, technical phrases                                                                                                                     |
+| Examples | en for English, nl (Dutch), fr (French)                                                                                                             |
+| Break Down | First, explain ... , then ....                                                                                                                      |
+| Format   | e.g. Report in table format                                                                                                                         |
+| Grammar and spelling | be accurate                                                                                                                                         |
+| Feasible | Is the question been asked realistic and achievable ?                                                                                               |
 
 
 ### _Usage_ for this prompt
