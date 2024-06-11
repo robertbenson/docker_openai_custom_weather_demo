@@ -17,22 +17,25 @@ This is a Python script using OpenAI that uses a _natural language_ prompt to de
 The example at OpenAI has _mock_ weather api calls, this version has amended the [example code](https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models) to use real-time OpenWeather api calls and a formatting request has been added.
 
 
-## Running as a Docker Image
+## Run as a Docker Image
 
 
 This demo is available as a Docker image: 
 
 
+### Pull
+
+```cmd
+docker pull rbenson789/demo_openai_weather
+```
+### Run
+
+```cmd
+docker run -i  rbenson789/demo_openai_weather
+```
 
 
-| Docker | Command                                         |
-|--------|-------------------------------------------------|
-| Pull   | `docker pull rbenson789/demo_openai_weather`    |
-| Run    | `docker run -i  rbenson789/demo_openai_weather` |
-
-
-
-## Running as a Python Script
+## Run as a Python Script
 
 ### API Keys
 Two api keys are required. One for OpenAI and the other for OpenWeather. This will require setting up an account for each.
@@ -40,11 +43,16 @@ Two api keys are required. One for OpenAI and the other for OpenWeather. This wi
 ### Install Packages
 _Check Virtual Environment, make sure to activate._
 
-| Package                          | install                       |
-|----------------------------------|-------------------------------|
-| env variables<br/>(hide api key) | <pre><code>pip install python_dotenv  |
-| OpenAI package                   | <pre><code>pip install --upgrade openai |
+#### manage env variables
+```cmd
+pip install python_dotenv
+```
+#### OpenAI
+```cmd
+pip install --upgrade openai
+```
 
+### run
 ```cmd
 python main.py
 ```
@@ -100,6 +108,8 @@ The repository on Docker Hub can be pulled and run on a local machine.
 
 ```console
 docker pull rbenson789/demo_openai_weather
+```
+```console
 docker run -i rbenson789/demo_openai_weather
 ```
 
@@ -127,19 +137,19 @@ Using the information in the user prompt, the model will make a response using c
 
 ### Guidelines for writing a good prompt
 
-| #        | Comment                                                                                                                                             | 
-|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| Persona  | Give the model an idea of the  _type of person_ that you would like a response from.<br/>e.g.You are a weather bot, <br/>you are a maths expert etc |
+| #                    | Comment                                                                                                                                             | 
+|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| Persona              | Give the model an idea of the  _type of person_ that you would like a response from.<br/>e.g.You are a weather bot, <br/>you are a maths expert etc |
 | Be Clear and concise | no unnecessary commentary to distract                                                                                                               |
-| Context  | e.g. _explain the theory of relativity_                                                                                                             |
-| Scope    | define boundaries, in 200 words ..                                                                                                                  |
-| Specific | avoid tell me, use What ...                                                                                                                         |
-| Simple   | avoid jargon, technical phrases                                                                                                                     |
-| Examples | en for English, nl (Dutch), fr (French)                                                                                                             |
-| Break Down | First, explain ... , then ....                                                                                                                      |
-| Format   | e.g. Report in table format                                                                                                                         |
+| Context              | e.g. _explain the theory of relativity_                                                                                                             |
+| Scope                | define boundaries, in 200 words ..                                                                                                                  |
+| Specific             | avoid tell me, use What ...                                                                                                                         |
+| Simple               | avoid jargon, technical phrases                                                                                                                     |
+| Examples             | en for English, nl (Dutch), fr (French)                                                                                                             |
+| Break Down           | First, explain ... , then ....                                                                                                                      |
+| Format               | e.g. Report in table format                                                                                                                         |
 | Grammar and spelling | be accurate                                                                                                                                         |
-| Feasible | Is the question been asked realistic and achievable ?                                                                                               |
+| Feasible             | Is the question been asked realistic and achievable ?                                                                                               |
 
 
 ### _Usage_ for this prompt
@@ -181,7 +191,7 @@ This prompt does not meet many of the guideline criteria. A random response shou
 
 This is the response for _horse_.
 
-```console
+```
 | Metric          | Horse Location 🌧️             |
 |-----------------|-------------------------------|
 | Description     | Partly cloudy with rain       |
@@ -498,11 +508,15 @@ CMD ["python", "main.py"]
 
 ### standard build 
 
-`docker build -t weather/demo_openai_weather:1.0 .`
+```cmd
+docker build -t weather/demo_openai_weather:1.0 .`
+```
 
 #### set up api keys in the build
 
-`docker build --build-arg A_weather_api_key=<your key> --build-arg A_openai_api_key=<your key> -t weather/demo_openai_weather:1.0 .`
+```cmd 
+docker build --build-arg A_weather_api_key=<your key> --build-arg A_openai_api_key=<your key> -t weather/demo_openai_weather:1.0 .
+```
 
 ## Build image for Docker Hub
 The name of the image on Docker Hub will be userid/repository name
