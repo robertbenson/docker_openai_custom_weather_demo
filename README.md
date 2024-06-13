@@ -72,6 +72,10 @@ There may also be valid reasons to keep information out of the public domain:
 - Confidentiality: finance, defense , medical are example sectors that would keep information confidential.
 - Security, govt agencies etc. will have confidential information.
 
+## Citations 
+
+Documents can be uploaded to the model using "file search". Information from these documents (PDFs, Word files, text files etc) can be used to _ground_ responses and sources will be credited.
+
  
 
 
